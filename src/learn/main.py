@@ -37,6 +37,25 @@ bool(0) # False
 #
 # complex 複數
 36j # j 表示複數
+#
+# str 字符串
+# 單引號, 雙引號, 三引號
+'hello world!'
+"hello world!"
+type('1') # <class 'str'>
+'let\'s go'
+'''hello world!
+love world!''' # ''', """ 多行字符串
+r'c:\north\ng' # r'', R'' 原始字符串(無視轉義字浮，故所見及所得)
+"hello" + "world" # helloworld
+'hello' * 3 # hellohellohello
+'hello'[1] # e
+'hello'[-1] # o
+'hello world'[0:5] # hello
+'hello world'[0:-1] # hello worl
+'hello'[0:20] # hello 超過長度取到最後
+'hello'[2:] # llo 2 取到末
+'hello world'[:-5] # hello
 
 
 
