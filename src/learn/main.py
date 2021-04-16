@@ -59,5 +59,19 @@ r'c:\north\ng' # r'', R'' 原始字符串(無視轉義字浮，故所見及所�
 
 
 
+
+# 組
+# list 列表
+type([1, 2, 3]) # <class 'list'>
+type([1, True, [2, 4]]) # <class 'list'> list 內可以支持多類型
+['hello', 'world', 'love', 'you'][0] # 'hello'
+['hello', 'world', 'love', 'you'][0:2] # ['hello', 'world']
+['hello', 'world', 'love', 'you'][-1:] # ['you']
+# 如果用 : 取值的話返回的是 list 不是對應的類型
+['hello'] + ['world'] # ['hello', 'world']
+['hello'] * 3 # ['hello', 'hello', 'hello']
+
+
+
 # 變量
 #
