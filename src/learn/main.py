@@ -70,6 +70,19 @@ type([1, True, [2, 4]]) # <class 'list'> list 內可以支持多類型
 # 如果用 : 取值的話返回的是 list 不是對應的類型
 ['hello'] + ['world'] # ['hello', 'world']
 ['hello'] * 3 # ['hello', 'hello', 'hello']
+# tuple 元組
+type((1, 2, 3)) # <class 'tuple'>
+(1, 2, 3)
+(1, 'a', True)
+(1, 2)[0] # 1
+(1, 2, 3)[0:2] # (1, 2)
+(1, 2) + (3, 4) # (1, 2, 3, 4)
+(1) * 3 # (1, 1, 1)
+type((1)) # <class 'int'> 元組沒有多值，括號將僅是運算符的括號
+type((1,)) # <class 'tuple'>
+type(())  # <class 'tuple'>
+# tuple 與 list 的區別
+
 
 
 
