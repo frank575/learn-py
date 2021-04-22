@@ -109,8 +109,13 @@ len({1, 2, 3}) # 3
 type({}) # <class 'dict'>
 type(set()) # <class 'set'> 定義空集合要使用 set()
 len(set()) # 0
-
-
+#
+# dict 字典
+# key-value、"無序"
+type({}) # <class 'dict'>
+type({ 'name': 'frank' }) # <class 'dict'>
+{ 'name': 'frank' }['name'] # frank
+{ 1: 'frank', '1': 'jeff' } # { 1: 'frank', '1': 'jeff' } key 不只能是 str，只要是不可變類型即可
 
 
 # 變量
