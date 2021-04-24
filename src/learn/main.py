@@ -119,4 +119,5 @@ type({ 'name': 'frank' }) # <class 'dict'>
 
 
 # 變量
-#
+A = [1, 3, 5]
+hello_world = 'hello world' # python 命名規範採 _ 而不是小駝峰
