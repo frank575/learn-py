@@ -121,3 +121,4 @@ type({ 'name': 'frank' }) # <class 'dict'>
 # 變量
 A = [1, 3, 5]
 hello_world = 'hello world' # python 命名規範採 _ 而不是小駝峰
+id(hello_world) # 55399200 id() 撈取該變量地址
