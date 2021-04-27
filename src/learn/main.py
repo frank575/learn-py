@@ -1,6 +1,5 @@
-
 # type 基本數據類型
-#
+# 
 # Number 數字
 # int 整數(其他語言有分 short, int, long)
 # float 浮點數(單精度 float, 雙精度 double, 不過 py 沒有分)
@@ -79,6 +78,7 @@ type([1, True, [2, 4]]) # <class 'list'> list 內可以支持多類型
 len([1, 3, 5]) # 3
 max([1, 3, 5]) # 5
 min([1, 3, 5]) # 1
+[1].append(2) # [1, 2]
 #
 # tuple 元組
 type((1, 2, 3)) # <class 'tuple'>
@@ -93,7 +93,7 @@ type((1,)) # <class 'tuple'>
 type(())  # <class 'tuple'>
 # tuple 與 list 的區別
 # 補
-#
+# 
 # [:] 這稱作 slice 切片
 #
 # Set 集合(去重的無序組)
@@ -118,7 +118,29 @@ type({ 'name': 'frank' }) # <class 'dict'>
 { 1: 'frank', '1': 'jeff' } # { 1: 'frank', '1': 'jeff' } key 不只能是 str，只要是不可變類型即可
 
 
+
+
 # 變量
 A = [1, 3, 5]
 hello_world = 'hello world' # python 命名規範採 _ 而不是小駝峰
 id(hello_world) # 55399200 id() 撈取該變量地址
+
+
+
+
+# 運算符
+# 算數運算符
+# *, /, //, %, **
+3 // 2 # 1 無條件捨去
+2 ** 2 # 4 2 的 2 次方
+# 賦值運算符
+# =, +=, *=, /=, %=, **=, //=
+# python 沒有自增自減運算符 ++, --
+# 比較(關係)運算符
+# ==, !=, >, <, >=, <=
+# 邏輯運算符
+# and, or, not
+# 成員運算符
+# in, not in
+# 身分運算符
+# is, is not
