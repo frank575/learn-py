@@ -124,6 +124,10 @@ type({ 'name': 'frank' }) # <class 'dict'>
 A = [1, 3, 5]
 hello_world = 'hello world' # python 命名規範採 _ 而不是小駝峰
 id(hello_world) # 55399200 id() 撈取該變量地址
+# 常量 constant
+# py 只有意義上的常量, 規範是用大駝峰來申明
+HELLO_WORLD = 'hello world constant'
+
 
 
 
@@ -233,3 +237,12 @@ isinstance('hello', (int, str)) # True 可以多類型判斷
 # | 13 | not, and, or                    |
 # 記不起來的話建議聒聒號讓大家都能輕易識別，如下：
 (not 1) or ((1 + 2) == 3)
+#
+# 流程控制語句
+# 條件控制 condition
+if True:
+  print('good')
+else:
+  print('bad')
+if [1]:
+  print('has value')
