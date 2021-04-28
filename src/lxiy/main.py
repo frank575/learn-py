@@ -133,14 +133,83 @@ id(hello_world) # 55399200 id() 撈取該變量地址
 # *, /, //, %, **
 3 // 2 # 1 無條件捨去
 2 ** 2 # 4 2 的 2 次方
+#
 # 賦值運算符
 # =, +=, *=, /=, %=, **=, //=
 # python 沒有自增自減運算符 ++, --
+#
 # 比較(關係)運算符
 # ==, !=, >, <, >=, <=
+# 不是只有數字能比較
+'b' > 'a' # True 因為字碼較大 可以使用 ord() 查看
+'abc' < 'abd' # True 會將每個值取出單獨比對, a < a, b < b, c < d
+[1, 2, 3] < [2, 3, 4] # True 組也可以(list, tuple)
+#
 # 邏輯運算符
 # and, or, not
+# int float 非 0 被認為是 True
+not 0.1 # False
+not 0 # True
+# str 空字符串被認為是 False
+not '' # True
+not '0' # False
+# 組 空列表被認為是 False
+not []
+True and True # True
+True and False # False
+True or True # True
+True or False # True
+# 只有 not 返回的固定是 True/False
+# 不一定要用 True/False 來比較
+'a' and 'b' # 'b'
+'' and 'b' # ''
+'a' or '' # 'a'
+'' or 'a' # 'a'
+#
 # 成員運算符
 # in, not in
+1 in [1, 2, 3] # True
+4 not in [1, 2, 3] # True
+'h' in 'hello' # True
+1 in (1, 2) # True
+1 in {1, 2} # True
+'a' in {'a': 1} # True 字典由 key 存在與否來判斷
+#
 # 身分運算符
 # is, is not
+1 is 1 # True
+'hello' is not 'hello' # False
+# is 與 == 的區別
+# 如同 js 的 == 與 === 的區別 精度有別
+# == 比較值相等, is 比較地址值是否相等(可由 id() 查看)
+is_a = 1
+is_b = 1.0
+is_a == is_b # True
+is_a is is_b # False
+
+is_c = {1, 2, 3}
+is_d = {2, 1, 3}
+is_c == is_d # True 集合無序 所以是 True
+is_c is is_d # False
+
+is_e = (1, 2, 3)
+is_f = (2, 1, 3)
+is_e == is_f # False 有序會取值計算
+is_e == is_f # False
+#
+# 類型判斷
+type('hello') == int # False
+type('hello') == str # True
+isinstance('hello', str) # True 推薦使用 isinstance 判斷
+isinstance('hello', (int, str)) # True 可以多類型判斷
+#
+# 位運算符 都是把數字轉二進制數進行運算
+# &(按位與) |(按位或) ^(按位異或) ~(按位取反) <<(左移) >>(右移)
+2 & 3 # 2, 0b10 0b11 單獨取值比較，若兩值為 1 返回 1 否則為 0, 11 > 1, 01 > 0 > 0b10 故返回 2
+2 | 3 # 3, 若兩值有 1 返回 1, 11 > 1, 01 > 1 > 0b11 故返回 3
+# ...
+
+
+
+
+# 表達式
