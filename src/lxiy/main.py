@@ -244,5 +244,9 @@ if True:
   print('good')
 else:
   print('bad')
+
 if [1]:
   print('has value')
+
+if True:
+  pass # 空語句/佔位符
