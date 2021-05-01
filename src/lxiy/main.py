@@ -240,13 +240,41 @@ isinstance('hello', (int, str)) # True 可以多類型判斷
 #
 # 流程控制語句
 # 條件控制 condition
-if True:
+if [1]:
   print('good')
+elif True:
+  pass # 空語句/佔位符
 else:
   print('bad')
 
-if [1]:
-  print('has value')
 
-if True:
-  pass # 空語句/佔位符
+
+
+# 循環
+# while
+i = 0
+while i < 10:
+  i += 1
+  print(i)
+else:
+  print('while end')
+#
+# for, for-else
+fruits = ['apple', 'orange', 'banana']
+for e in fruits:
+  print(e)
+  # 一樣有 break, continue
+else:
+  print('frust is gone')
+#
+# for range
+for i in range(0, 10):
+  print(i) # 0, 1, 2..., 9
+for i in range(0, 10, 2):
+  print(i) # 0, 2, 4..., 8
+# 以上等價於以下
+list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in list[0:len(list):2]:
+  print(i) # 0, 2, 4..., 8
+for i in range(0, 10, -2):
+  print(i) # 10, 8, 6..., 2
