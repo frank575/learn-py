@@ -181,8 +181,11 @@ True or False # True
 #
 # 身分運算符
 # is, is not
-1 is 1 # True
-'hello' is not 'hello' # False
+a = 1
+b = 2
+print(a is b)
+a is b # False
+a is not b # True
 # is 與 == 的區別
 # 如同 js 的 == 與 === 的區別 精度有別
 # == 比較值相等, is 比較地址值是否相等(可由 id() 查看)
@@ -278,3 +281,62 @@ for i in list[0:len(list):2]:
   print(i) # 0, 2, 4..., 8
 for i in range(0, 10, -2):
   print(i) # 10, 8, 6..., 2
+
+
+
+
+# 包, 模塊, 類
+# 包 > 模塊 > 類 >= 函數, 變量
+# 包(可以理解成為目錄, 可以有很多模塊)
+# 模塊(可以理解成檔案 .py, 可以有很多類)
+'''
+a
+└‐‐__init__.py 如果要讓目錄成為包，目錄下要有該檔案(該檔也是一個模塊)
+└‐‐p1.py
+└‐‐p2.py
+└‐‐sub_a
+   └‐‐p3.py
+b
+└‐‐__init__.py
+└‐‐p1.py
+└‐‐p2.py
+
+---------------------------
+
+# a/p1.py
+a = 1
+
+# a/sub_a/p3.py
+b = 2
+
+引入方式(import)
+a/p2.py
+import p1 # 使用 import 引入
+import sub_a.p3
+import sub_a.p3 as p3 # 可以使用 as 重命名
+print(p1.a) # 1
+print(sub_a.p3.b) # 2
+print(p3.b) # 2
+
+
+引入方式(from import)
+from [哪] import [導出的值名稱]
+from sub_a.p3 import b # 取值
+from sub_a import p3 # 取模塊
+# from sub_a.p3 import * # 使用 import * 可以導出所有值，但不推薦，因為可讀性較差(值會憑空出現) 
+print(b) # 2
+print(p3.b) # 2
+
+
+__all__ 用來組織 from import * 的值
+b/p1.py
+__all__ = ['a', 'b'] # 決定要導出哪先值，此僅導出 a, b 變量
+a = 1
+b = 2
+c = 3
+
+b/t/p2.py
+from p1 import *
+print(a, b) # 1, 2
+print(c) # error c is not defined
+'''
