@@ -339,4 +339,57 @@ b/t/p2.py
 from p1 import *
 print(a, b) # 1, 2
 print(c) # error c is not defined
+"""
+多值導出也可以使用 from X import x, y, z
+當值太長想換行可以使用 \ 來處理
+from X import x,\ 
+  y,\
+  z
+或者是 () 來處理
+from X import (x, 
+  y,
+  z)
+"""
+
+__init__.py
+1. 必須有該檔案才能將目錄升級承包
+2. 當一個包被導入後 __init__.py 將自動被執行(通常用來做初始化)
+---
+a
+└‐‐t
+   └‐‐__init__.py
+   └‐‐t1.py
+   └‐‐t2.py
+└‐‐a1.py
+---
+a/t/t1.py
+a = 1
+b = 2
+
+a/t/t2.py
+c = 3
+d = 4
+
+a/t/__init.py
+__all__ = ['t1']
+print('hello t/init')
+
+a/a1.py
+import t # 此時導入包 你會發現只能導入 t1 也就是 __init__ 設定的 __all__
+print(t.t1.a) # 1
+print(t.t2.b) # error t2 is not defined
+# 此時執行結果會是 hello t/init > 1 > error
+
+我們可以把 __init__.py 改造一下
+假設很多 py 會使用到 sys, datetime, io 系統包  這時候就可以統一在 __init__ 導入
+這樣每個要調用的 py 就不需要重新導入以上三個系統包
+
+a/t/__init.py
+import sys
+import datetime
+import io
+
+a/a1.py
+import t
+print(t.sys.path) # ['C:\\.....']
 '''
