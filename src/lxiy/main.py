@@ -392,4 +392,5 @@ import io
 a/a1.py
 import t
 print(t.sys.path) # ['C:\\.....']
+
 '''
