@@ -341,9 +341,9 @@ print(a, b) # 1, 2
 print(c) # error c is not defined
 """
 多值導出也可以使用 from X import x, y, z
-當值太長想換行可以使用 \ 來處理
-from X import x,\ 
-  y,\
+當值太長想換行可以使用 \\ 來處理
+from X import x,\\ 
+  y,\\
   z
 或者是 () 來處理
 from X import (x, 
@@ -391,6 +391,16 @@ import io
 
 a/a1.py
 import t
-print(t.sys.path) # ['C:\\.....']
+print(t.sys.path) # ['C:\\\\.....']
 
+額外拓展：
+1. 包和模塊是不會被重複導入的，例如 c1 被導入兩次，那麼實際只會導入一次
+2. 避免循環導入，例如 c1 引入 c2.c2，c2 又引入 c1，這樣程序就會報錯
+
+內置變量
+可以使用 dir() 來查看模塊內變量
+__name__ # 命名空間(可以理解為模塊名)，如：t.c9
+__package__ # 包名，如：t
+__doc__ # 模塊註釋(頂部""""""字串註釋)
+__file__ # 檔案路徑，如：D:\\py\\t\\c9.py
 '''
